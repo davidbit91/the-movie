@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "movies-b501b": {
+      "hosting": {
+        "the-movie": [
+          "movies-b501b"
+        ]
+      }
+    }
+  }
+}
