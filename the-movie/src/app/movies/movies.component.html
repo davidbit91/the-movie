@@ -1,5 +1,9 @@
-<p>movies works!</p>
-
-<div *ngFor='let item of movies | async'>
-  <p>{{item.title}}</p>
+<div class="hero-image" >
+  <div class="imgContainer" >
+    <figure *ngFor='let i of movies | async'>
+      <img src="{{i.poster}}" alt="{{i.title}}">
+      <figcaption>{{i.title}}</figcaption>
+    </figure>
+  </div>
 </div>
+
