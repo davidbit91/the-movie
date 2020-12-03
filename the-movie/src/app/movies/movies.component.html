@@ -1,4 +1,17 @@
 <div class="hero-image" >
+  <div class="title">
+    <h4 class="wordCarousel">
+      <span>Cines Manolo: </span>
+      <div>
+          <ul class="flip4">
+              <li>Cines de calidad</li>
+              <li>Increíble sonido 7.1</li>
+              <li>4K</li>
+              <li>Butacas top tier</li>
+          </ul>
+      </div>
+    </h4>
+  </div>
   <div class="imgContainer" >
     <figure *ngFor='let i of movies | async'>
       <img src="{{i.poster}}" alt="{{i.title}}">
