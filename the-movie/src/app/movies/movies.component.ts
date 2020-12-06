@@ -1,9 +1,16 @@
+import { MatDialog } from '@angular/material/dialog';
+import { MovieInfoComponent } from './../movie-info/movie-info.component';
 
 import { Component, OnInit } from '@angular/core';
 import { async } from '@angular/core/testing';
 import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Movie } from '../share/interfaces/movie';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-movies',
@@ -18,7 +25,7 @@ export class MoviesComponent implements OnInit {
   movieImg: string[];
   cont: number;
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.movies = this.getItems$();
@@ -36,6 +43,16 @@ export class MoviesComponent implements OnInit {
             } else {
                 console.error('Movie not found');
             }
+    });
+  }
+  openDialog(movie): void {
+    const dialogRef = this.dialog.open(MovieInfoComponent, {
+      width: '250px',
+      data: movie
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 

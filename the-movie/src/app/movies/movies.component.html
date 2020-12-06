@@ -14,7 +14,7 @@
   </div>
   <div class="imgContainer" >
     <figure *ngFor='let i of movies | async'>
-      <img src="{{i.poster}}" alt="{{i.title}}">
+      <img src="{{i.poster}}" alt="{{i.title}}" (click)="openDialog(i)">
       <figcaption>{{i.title}}</figcaption>
     </figure>
   </div>
