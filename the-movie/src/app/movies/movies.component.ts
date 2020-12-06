@@ -20,10 +20,6 @@ export interface DialogData {
 export class MoviesComponent implements OnInit {
 
   movies: Observable<Movie[]>;
-  movie: any;
-  getMovie: any;
-  movieImg: string[];
-  cont: number;
 
   constructor(private firestore: AngularFirestore, private dialog: MatDialog) { }
 
@@ -34,20 +30,11 @@ export class MoviesComponent implements OnInit {
   getItems$(): Observable<Movie[]>{
     return this.firestore.collection<Movie>('movies').valueChanges();
   }
-  getItem$(id){
-    this.getMovie = this.firestore.collection('movies').doc('3');
-    this.getMovie.ref.get()
-        .then((doc)  => {
-            if (doc.exists) {
-                this.movie = doc.data();
-            } else {
-                console.error('Movie not found');
-            }
-    });
-  }
-  openDialog(movie): void {
+
+  openDialog(movie: Movie): void {
     const dialogRef = this.dialog.open(MovieInfoComponent, {
-      width: '250px',
+      width: '50%',
+      height: '60%',
       data: movie
     });
 

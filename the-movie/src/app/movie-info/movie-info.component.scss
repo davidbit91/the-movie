@@ -1,0 +1,31 @@
+.infoContainer {
+  display: flex;
+  flex-flow: row;
+  font-family: unquote("Mukta");
+  font-size: 18px;
+}
+
+.photoTitle {
+  width: 300px;
+  p{
+
+  }
+
+  img {
+    width: 250px;
+    height: 430px;
+  }
+}
+
+.infoMovie {
+  margin-top: 30px;
+  margin-left: 15px;
+
+  ul{
+    list-style: none;
+  }
+}
+.quit{
+  text-align: center;
+}
+

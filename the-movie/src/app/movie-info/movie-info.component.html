@@ -1,1 +1,19 @@
-{{data.title}}
+<div class="infoContainer">
+  <div class="photoTitle">
+    <p>Room {{ data.room }} {{ data.title }}</p>
+    <img src="{{ data.poster }}" alt="" />
+  </div>
+  <div class="infoMovie">
+    <p><strong>Genres:</strong>  {{data.genres}}</p>
+    <p><strong>Year:</strong> {{data.year}}</p>
+    <p><strong>Director:</strong> {{data.director}}</p>
+    <p><strong>Actors:</strong> </p>
+    <ul>
+      <li *ngFor="let a of data.actors">{{a}}</li>
+    </ul>
+    <p><strong>Schedule:</strong> 12:00 - 16:00 - 20:00</p>
+    <p><strong>Synopsis</strong></p>
+    <p> {{data.synopsis}}</p>
+  </div>
+</div>
+<p class="quit">Click outside to quit</p>
